@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          docker build . --file Dockerfile \
+            --tag ilspy-tests:${TIMESTAMP} \
+            --tag ilspy-tests:latest
+          echo "Built Docker image with tags:"
+          echo "  - ilspy-tests:${TIMESTAMP}"
+          echo "  - ilspy-tests:latest"
