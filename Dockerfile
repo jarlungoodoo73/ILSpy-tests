@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0
 
 WORKDIR /app
 
-# Copy all test files
+# Copy project files
 COPY . .
 
 # Default command

@@ -2,7 +2,5 @@
 .github
 *.md
 readme.txt
-bin/
-obj/
-**/bin/
+# Exclude build output directories (obj and build-generated bin)
 **/obj/
