@@ -1,0 +1,6 @@
+.git
+.github
+*.md
+readme.txt
+# Exclude build output directories (obj and build-generated bin)
+**/obj/
