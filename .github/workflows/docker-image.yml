@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build Docker image
+        # Validates that the Dockerfile builds successfully. Images are not pushed to a registry.
         run: |
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
           docker build . --file Dockerfile \
